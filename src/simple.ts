@@ -32,4 +32,4 @@ var c  : any = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
 drawSquare( 10,10,100);
-drawRectangle( 50,50,100, 20);
+drawRectangle( 50,50,100, 200);

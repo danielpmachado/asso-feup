@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SimpleDraw</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav">
+        <div class="container">
+        <a class="navbar-brand" href="#">SimpleDraw</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>       
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                A simple drawing web application for ASSO
+            </form>
+        </div>
+        </div>
+</nav>
+
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-5">
+            <h1 class="mt-5">Bitmap Shapes</h1>
+            <canvas id="canvas" width="400" height="400" style="border: 2px solid black; border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;">
+            </canvas>
+        </div>
+        <div class="col-5" id="all_canvas">
+                <h1 class="mt-5">SVG Shapes</h1>
+                <svg id="svgcanvas" width="400" height="400" viewBox="0 0 10 10" style="border: 2px solid black; border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;">
+                </svg>
+        </div>
+
+        <div class="col-2">
+            <h1 class="mt-5" >ToolBox</h1>
+            <div class="card">       
+                <div class="card-body">
+                        <button type="button" id ="undo" class="btn btn-outline-primary btn-sm">Undo</button>
+                        <button type="button" id ="redo" class="btn btn-outline-secondary btn-sm">Redo</button>  
+                        <p></p>
+
+                        <h6>Figure</h6>
+                        <div class="form-group">
+                            <select id="shape-dropdown" class="custom-select">
+                                <option value=none>none</option>
+                            </select>
+                        </div>
+
+                        <h6>Zoom</h6>
+                        <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start;">
+                            <button type="button" id ="zoom-minus" class="btn btn-outline-primary btn-sm">-</button>
+                            <div id="zoom-factor" style="margin-bottom: 0 ; line-height: 2"> 1 </div>
+                            <button type="button" id ="zoom-plus" class="btn btn-outline-secondary btn-sm">+</button>  
+                        </div>
+                        <p></p>
+
+                <div id="tools">
+                    <p>(placeholder) Rotate</p>
+                    <p>(placeholder) Translate</p>
+                    <p>(placeholder) Grid</p>
+                </div>
+
+                    <h6>Viewport Views</h6>
+                    
+                    <select id="views-dropdown"  class="custom-select">
+                        <option value="wireframe" selected="selected">Wireframe</option>
+                        <option value="fill">Fill</option>
+                    </select>
+
+
+
+            <h6 class="mt-2">Exports</h6>
+                    
+            <div class="form-group">
+                    <select id="format-dropbox" class="custom-select"></select>
+                </div>
+
+                <button type="button" id ="import" class="btn btn-outline-primary btn-sm">Import</button>
+                <button type="button" id ="export" class="btn btn-outline-secondary btn-sm">Export</button>
+
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-5">
+
+
+            <h3>Layers</h3>
+            <ul class="pagination" id="layers">
+
+
+
+
+                <!-- 
+                <li class="page-item disabled">
+                <a class="page-link" href="#">&laquo;</a>
+                </li>
+                <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="#">4</a>
+                </li>
+                <li class="page-item">
+                <a class="page-link" href="#">5</a>
+                </li>
+                -->
+            </ul>
+        </div>
+
+        <div class="col-7">
+                <div id="command">
+                    <h3>Console</h3>
+                        <form id="form-console">
+                            <input type="text" id="console-input" class="form-control" placeholder="draw figure values"></input>
+                            <button type='button' id="submit" class="btn-primary btn" >Submit</button> 
+                        </form>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--
+<h1>Cenas Antigas</h1>
+
+
+
+    <div class="flex-container">
+    
+    <div style="flex-shrink: 0" id="all_canvas">
+        
+         
+        <canvas id="canvas" width="400" height="400" style="border: 2px solid black; border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;">
+        </canvas>
+        
+        <svg id="svgcanvas" width="400" height="400" style="border: 1px solid blue;">
+        </svg>
+    
+    </div> 
+
+    <div id="toolbox">
+        <button type="button" id ="undo">Undo</button>
+        <button type="button" id ="redo">Redo</button>
+
+        <select id="shape-dropbox">
+        </select>
+
+        <h3>Tools</h3>
+        <p>Rotate</p>
+        <p>Translate</p>
+        <p>Grid</p>
+        <h3>Viewport tools</h3>
+        
+        <input type="checkbox" name="wireframe" value="on"> Wireframe<br>
+        <p>bounding box ?</p>
+    </div>
+
+    </div>
+
+    <div class="flex-container">
+
+        <div id="layers" style="flex-shrink: 0" >
+            <p> Layers Panel</p>
+        </div>
+
+         <div id="command">
+            <form>
+                <input type="text" id="console-input" style="width: 300px"></input>
+                <button type='button' id="submit" >submit</button> 
+            </form>
+        </div> 
+    </div> 
+
+    -->
+    <script src="dist/bundle.js"></script>
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+</body>
+</html>

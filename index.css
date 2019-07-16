@@ -1,0 +1,53 @@
+/*.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#all_canvas{
+    margin-right: 15px;
+}
+
+
+#toolbox{
+    background-color: lightgray;
+    margin-bottom: 0px;
+    max-width: 325px;
+    padding: 1em;
+}
+
+#toolbox p{
+    text-align: left;
+    padding: 10px;
+}
+
+#layers {
+    background-color: lightgray;
+    max-width: 15em;
+    min-height: 80px;
+    text-align: center;
+}
+
+#layers p{
+    padding-top: 1em;
+}*/
+
+#nav{
+    border-right-color:white;
+}
+
+.navbar{
+    margin-top:-1em;
+    margin-left:-1em;
+    padding-top:1.5em;
+    padding-left:1.5em;
+
+}
+
+#form-console{
+    display: flex;
+}
+
+#form-console input{
+    margin-right: 1em;
+    width:300px;
+}
