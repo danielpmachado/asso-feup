@@ -11,6 +11,9 @@ You should open in a browser the index.html file that contains the simpledraw co
 When you run from npm the main is `script.ts` this script will draw a circle and two rectangles.
 To start developing first start editing this script.
 
+## Final Result
+
+![UML](https://github.com/dolfander/asso-feup/blob/master/simple_draw.png)
 
 ## Approach
 
